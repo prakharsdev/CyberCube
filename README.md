@@ -73,28 +73,28 @@ If you haven't installed PostgreSQL on your local machine, follow these steps:
 Visit the official PostgreSQL [website](https://www.postgresql.org/download/) and download the appropriate installer for your operating system.
 
 2. **Run the Installer:**
--Follow the installation wizard prompts. You will be asked to set a password for the PostgreSQL superuser (postgres). Make sure to remember this password as it will be needed later.
--The installer will also include pgAdmin4, a graphical tool for managing PostgreSQL databases.
+ - Follow the installation wizard prompts. You will be asked to set a password for the PostgreSQL superuser (postgres). Make sure to remember this password as it will be needed later.
+ - The installer will also include pgAdmin4, a graphical tool for managing PostgreSQL databases.
 
 3. **Verify the Installation:**
--After installation, verify that PostgreSQL is installed correctly by opening a terminal or command prompt and typing:
+ -After installation, verify that PostgreSQL is installed correctly by opening a terminal or command prompt and typing:
 ```bash
 psql --version
 ```
--You should see the version of PostgreSQL that you installed.
+ - You should see the version of PostgreSQL that you installed.
 
 ### Step 2: Create and Configure a Database Using pgAdmin4
 **Launch pgAdmin4:**
--Open pgAdmin4, which should have been installed along with PostgreSQL.
--You may be prompted to enter the password for the postgres user that you set during installation.
+- Open pgAdmin4, which should have been installed along with PostgreSQL.
+- You may be prompted to enter the password for the postgres user that you set during installation.
 
 **Create a New Database:**
 -In the pgAdmin4 interface, right-click on the Servers item in the left-hand tree and select Connect if it’s not already connected.
 -Expand the server tree, right-click on Databases, and select Create > Database....
 
 **In the Create Database dialog:**
--**Database Name:** Enter **your_db_name**. Ex: CyberCube
--**Owner:** Set this to postgres.
+- **Database Name:** Enter **your_db_name**. Ex: CyberCube
+- **Owner:** Set this to postgres.
 Click **Save** to create the database.
 
 ### Step 3: Connect PostgreSQL to VS Code
@@ -102,16 +102,17 @@ Click **Save** to create the database.
 
 Open Visual Studio Code and go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
 Search for "PostgreSQL" and install the official PostgreSQL extension by Chris Kolkman.
+![image](https://github.com/user-attachments/assets/39d1a3a5-e0c5-426d-badc-dd7987e221d6)
 
 2. **Connect to PostgreSQL:**
 
 After installing the extension, you can connect to your PostgreSQL database by clicking on the "PostgreSQL" icon in the left sidebar.
 Click on "Add New Connection", and enter the connection details:
--**Host:** localhost
--**Port:** 5432 (default)
--**User:** your_db_user (Ex:postgres)
--**Password:** Enter the password you set during installation.
--**Database:** your_db_name (Ex: CyberCube)
+- **Host:** localhost
+- **Port:** 5432 (default)
+- **User:** your_db_user (Ex:postgres)
+- **Password:** Enter the password you set during installation.
+- **Database:** your_db_name (Ex: CyberCube)
 After connecting, you should see your database listed, and you can start interacting with it directly from VS Code.
    
 ### Step 4: Clone the Repository
