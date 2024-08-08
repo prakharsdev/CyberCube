@@ -81,21 +81,21 @@ Postman is a popular tool for testing and interacting with APIs. Below are the s
  	
 ### API Endpoints
 
-1. Get Vulnerabilities
+#### 1. Get Vulnerabilities
 -	**Endpoint:** /api/vulnerabilities
 
 -	**Method:** GET
 
 -	**Parameters:**
-  -cve_id (optional): Filter by a specific CVE ID.
-  -product_id (optional): Filter by a specific product ID.
+  1. cve_id (optional): Filter by a specific CVE ID.
+  2. product_id (optional): Filter by a specific product ID.
   
 -	**Headers:**
---	X-API-Key: Your API key.
+  1. X-API-Key: Your API key.
   
 -	**Response:**
---	Status: 200 OK
---	Body: JSON or HTML table of vulnerabilities.
+  1. Status: 200 OK
+  2. Body: JSON or HTML table of vulnerabilities.
   
   
 2. Get Severity Distribution
