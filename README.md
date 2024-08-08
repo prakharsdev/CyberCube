@@ -49,8 +49,8 @@ The data model is structured to capture detailed information about vulnerabiliti
 -	Columns: id, cve_entry_id, source, description
 -	Purpose: Captures details of weaknesses associated with each CVE, aiding in vulnerability categorization.
 5.	**configurations:**
-o	Columns: id, cve_entry_id, operator, negate
-o	Purpose: Represents logical configurations under which products are vulnerable, linked to specific CVEs.
+-	Columns: id, cve_entry_id, operator, negate
+-	Purpose: Represents logical configurations under which products are vulnerable, linked to specific CVEs.
 6.	**products:**
 -	Columns: id, config_id, vulnerable, criteria, part, vendor, product, version, version_end_excluding
 -	Purpose: Details affected products, including version information and vulnerability status.
