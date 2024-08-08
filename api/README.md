@@ -155,8 +155,14 @@ All endpoints below require a GET request and must include the X-API-Key header 
 ## Error Handlers
 The API includes the following error handlers to manage common issues:
 -	**401 Unauthorized:** Triggered when an invalid or missing API key is provided. Returns a 401 status with a message explaining the issue.
+  ![image](https://github.com/user-attachments/assets/7f36d0cf-cae8-4fcb-b62b-c29abc440e01)
+
 -	**404 Not Found:** Triggered when an endpoint or resource is not found. Returns a 404 status with a message indicating the resource was not found.
+![image](https://github.com/user-attachments/assets/2f3f18cc-6b15-4d55-88d0-bcc5d48eef0a)
+  
 -	**429 Too Many Requests:** Triggered when a client exceeds the rate limit. Returns a 429 status with a message advising the client to wait before making further requests.
+![image](https://github.com/user-attachments/assets/3a34c244-9f06-44ff-8533-d426245d8ca5)
+
 
 ## 5. Additional Information
 **Logging**
