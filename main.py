@@ -1,7 +1,7 @@
 from db.database import create_tables, conn, cur
 from ingestion.fetch_data import fetch_data
-from transformation.transform_data_old import transform_data
-from loading.load_data_old import load_data
+from transformation.transform_data import transform_data
+from loading.load_data import load_data
 import logging
 from log.logging_config import setup_logging  # Updated import path
 
