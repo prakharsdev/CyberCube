@@ -8,30 +8,30 @@ The project is organized into the following files and directories:
 -	**log_config.py:** Configures logging for the API, directing logs to both the console and a file (api.log). This setup ensures that detailed logs are kept for debugging and monitoring purposes.
 
 ### Explanation of Code Logic
-1.	Flask Application Setup (app.py):
+1.	**Flask Application Setup (app.py):**
 -	The Flask app is initialized, and middleware for caching, rate limiting, and logging is set up.
 -	The routes defined in routes.py are registered with the app, making the endpoints available.
 -	Error handlers are set up to manage common HTTP errors like 404 (Not Found), 401 (Unauthorized), and 429 (Too Many Requests).
 -	When the app starts, it listens for incoming HTTP requests and processes them accordingly.
-2.	Database Interaction (db.py):
+2.	**Database Interaction (db.py):**
 -	The database connection is established using PostgreSQL, with connection details pulled from environment variables.
 -	query_db() executes SQL queries and fetches results, while close_db_connection() ensures that the database connection is properly closed after use.
-3.	Query Definitions (queries.py):
+3.	**Query Definitions (queries.py):**
 -	SQL queries are defined to fetch specific data from the database, such as severity distributions, the worst products, and top vulnerabilities by impact or exploitability.
-4.	Routing and API Logic (routes.py):
+4.	**Routing and API Logic (routes.py):**
 -	Routes are defined for each API endpoint, with functions handling incoming requests, querying the database, and returning formatted responses.
 -	Security measures, like API key validation, are implemented to restrict access to authorized users.
 -	Utility functions are used to render the results in various formats, such as JSON or HTML tables.
-5.	Logging Configuration (log_config.py):
+5.	**Logging Configuration (log_config.py):**
 -	Logging is configured to capture detailed logs of API activity, errors, and performance, aiding in monitoring and debugging.
 
 ## 2. Chosen Open API and Rationale for Selection
-Chosen API: NVD (National Vulnerability Database) API
+**Chosen API:** NVD (National Vulnerability Database) API
 The NVD API was selected for this project because it provides comprehensive and up-to-date information about CVEs, which is essential for security analysis. The API offers structured data on vulnerabilities, including their descriptions, severity metrics, and associated products. This makes it a reliable source for building a database that can be queried for insights into software vulnerabilities.
 Rationale for Selection:
--	Comprehensive Data: The NVD API offers detailed information on a wide range of vulnerabilities, including CVSS scores, affected products, and references.
--	Structured Format: The API provides data in a well-structured JSON format, making it easy to parse and integrate into the ETL pipeline.
--	Regular Updates: The NVD API is frequently updated with new vulnerabilities, ensuring that the data remains current and relevant.
+-	**Comprehensive Data:** The NVD API offers detailed information on a wide range of vulnerabilities, including CVSS scores, affected products, and references.
+-	**Structured Format:** The API provides data in a well-structured JSON format, making it easy to parse and integrate into the ETL pipeline.
+-	**Regular Updates:** The NVD API is frequently updated with new vulnerabilities, ensuring that the data remains current and relevant.
   
 ### Why Flask Was Chosen Over Other Frameworks
 Flask was chosen as the framework for this API for several key reasons, particularly when compared to alternatives like GraphQL and traditional REST frameworks:
@@ -79,122 +79,77 @@ Postman is a popular tool for testing and interacting with APIs. Below are the s
 4.	**Explore other endpoints:** Test other API endpoints by adjusting the URL and parameters as needed.
 4. API Documentation
  	
-### API Endpoints
+## API Endpoints
+All endpoints below require a GET request and must include the X-API-Key header with your API key for authentication. Successful requests return a 200 OK status, and responses are provided as JSON or HTML tables, depending on the endpoint.
 
-#### 1. Get Vulnerabilities
--	**Endpoint:** /api/vulnerabilities
+### 1. Get Vulnerabilities
+-**Endpoint:** /api/vulnerabilities
+-**Parameters:**
+     ~cve_id (optional): Filter by a specific CVE ID.
+     ~product_id (optional): Filter by a specific product ID.
+-**Response:** List of vulnerabilities based on the provided filters.
 
--	**Method:** GET
+### 2. Get Severity Distribution
+-**Endpoint:** /api/severity-distribution
+-**Response:** Count of vulnerabilities grouped by severity level.
 
--	**Parameters:**
-  1. cve_id (optional): Filter by a specific CVE ID.
-  2. product_id (optional): Filter by a specific product ID.
+### 3. Get Worst Products
+-**Endpoint:** /api/worst-products
+-**Response:** List of products with the highest number of vulnerabilities.
+
+### 4. Get Top Impact Vulnerabilities
+-**Endpoint:** /api/top-impact-vulnerabilities
+-**Response:** Top 10 vulnerabilities with the highest impact scores.
+
+### 5. Get Top Exploitability Vulnerabilities
+-**Endpoint:** /api/top-exploitability-vulnerabilities
+-**Response:** Top 10 vulnerabilities with the highest exploitability scores.
+
+### 6. Get Top Attack Vectors
+-**Endpoint:** /api/top-attack-vectors
+-**Response:** Most common attack vectors associated with vulnerabilities.
+
+## Additional Analytical Endpoints
+
+### 7. Get Common Weaknesses
+-**Endpoint:** /api/common-weaknesses
+-**Response:** List of the most common weaknesses (CWEs) associated with vulnerabilities.
+
+### 8. Get Most Affected Vendors
+-**Endpoint:** /api/most-affected-vendors
+-**Response:** Vendors with the most products affected by vulnerabilities.
+
+### 9. Get Most Common Configurations
+-**Endpoint:** /api/most-common-configurations
+-**Response:** Most frequently occurring configurations linked to vulnerabilities.
+
+### 10. Get Vulnerability Trends
+-**Endpoint:** /api/vulnerability-trends
+-**Response:** Trend analysis of vulnerabilities over time.
+
+### 11. Get Products with Common Attack Vectors
+-**Endpoint:** /api/products-common-attack-vectors
+-**Response:** Products frequently associated with common attack vectors.
+
   
--	**Headers:**
-  1. X-API-Key: Your API key.
-  
--	**Response:**
-  1. Status: 200 OK
-  2. Body: JSON or HTML table of vulnerabilities.
-  
-  
-2. Get Severity Distribution
-•	Endpoint: /api/severity-distribution
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table showing the count of vulnerabilities by severity.
-3. Get Worst Products
-•	Endpoint: /api/worst-products
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table listing products with the most vulnerabilities.
-4. Get Top Impact Vulnerabilities
-•	Endpoint: /api/top-impact-vulnerabilities
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table listing the top 10 vulnerabilities by impact score.
-5. Get Top Exploitability Vulnerabilities
-•	Endpoint: /api/top-exploitability-vulnerabilities
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table listing the top 10 vulnerabilities by exploitability score.
-6. Get Top Attack Vectors
-•	Endpoint: /api/top-attack-vectors
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
-o	Body: JSON or HTML table listing the most common attack vectors.
-Additional Analytical Endpoints
-7. Get Common Weaknesses
-•	Endpoint: /api/common-weaknesses
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table listing the most common weaknesses associated with vulnerabilities.
-8. Get Most Affected Vendors
-•	Endpoint: /api/most-affected-vendors
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table listing vendors with the most affected products.
-9. Get Most Common Configurations
-•	Endpoint: /api/most-common-configurations
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table showing the most frequently occurring configurations linked to vulnerabilities.
-10. Get Vulnerability Trends
-•	Endpoint: /api/vulnerability-trends
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table providing trend analysis of vulnerabilities over time.
-11. Get Products with Common Attack Vectors
-•	Endpoint: /api/products-common-attack-vectors
-•	Method: GET
-•	Headers:
--	X-API-Key: Your API key.
-•	Response:
--	Status: 200 OK
--	Body: JSON or HTML table identifying products frequently associated with common attack vectors.
-  
-Error Handlers
+## Error Handlers
 The API includes the following error handlers to manage common issues:
-•	401 Unauthorized: Triggered when an invalid or missing API key is provided. Returns a 401 status with a message explaining the issue.
-•	404 Not Found: Triggered when an endpoint or resource is not found. Returns a 404 status with a message indicating the resource was not found.
-•	429 Too Many Requests: Triggered when a client exceeds the rate limit. Returns a 429 status with a message advising the client to wait before making further requests.
+-	**401 Unauthorized:** Triggered when an invalid or missing API key is provided. Returns a 401 status with a message explaining the issue.
+-	**404 Not Found:** Triggered when an endpoint or resource is not found. Returns a 404 status with a message indicating the resource was not found.
+-	**429 Too Many Requests:** Triggered when a client exceeds the rate limit. Returns a 429 status with a message advising the client to wait before making further requests.
 
-5. Additional Information
-Logging
+## 5. Additional Information
+**Logging**
 API logs are saved to api.log and also output to the console. The logging configuration can be modified in log_config.py.
-Caching and Rate Limiting
+
+**Caching and Rate Limiting**
 The API uses Flask-Caching to cache responses for frequently accessed endpoints, improving performance. Rate limiting is implemented using Flask-Limiter to prevent abuse.
-Security
-•	API Key Authentication: All endpoints require a valid API key.
-•	Rate Limiting: Prevents excessive requests from a single IP address, ensuring fair use.
-Future Improvements
-•	Expanded Query Options: Add more filtering and sorting options to existing endpoints.
-•	Enhanced Security: Implement OAuth2 or JWT for more robust authentication.
-•	Monitoring and Alerts: Integrate monitoring tools to track API usage and detect anomalies.
+
+**Security**
+-	**API Key Authentication:** All endpoints require a valid API key.
+-	**Rate Limiting:** Prevents excessive requests from a single IP address, ensuring fair use.
+
+**Future Improvements**
+-	**Expanded Query Options:** Add more filtering and sorting options to existing endpoints.
+-	**Enhanced Security:** Implement OAuth2 or JWT for more robust authentication.
+-	**Monitoring and Alerts:** Integrate monitoring tools to track API usage and detect anomalies.
