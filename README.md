@@ -64,8 +64,57 @@ This design allows for efficient querying and analysis, enabling detailed insigh
 ![ERD](https://github.com/user-attachments/assets/0a5db330-116b-4027-a365-c43b199c90d4)
 
 
-## 3. How to Set Up
-### Step 1: Clone the Repository
+## 3. How to Set Up and Use the API
+
+### Step 1: Install PostgreSQL on Your Local System
+If you haven't installed PostgreSQL on your local machine, follow these steps:
+
+1. **Download PostgreSQL:**
+Visit the official PostgreSQL [website](https://www.postgresql.org/download/) and download the appropriate installer for your operating system.
+
+2. **Run the Installer:**
+-Follow the installation wizard prompts. You will be asked to set a password for the PostgreSQL superuser (postgres). Make sure to remember this password as it will be needed later.
+-The installer will also include pgAdmin4, a graphical tool for managing PostgreSQL databases.
+
+3. **Verify the Installation:**
+-After installation, verify that PostgreSQL is installed correctly by opening a terminal or command prompt and typing:
+```bash
+psql --version
+```
+-You should see the version of PostgreSQL that you installed.
+
+### Step 2: Create and Configure a Database Using pgAdmin4
+**Launch pgAdmin4:**
+-Open pgAdmin4, which should have been installed along with PostgreSQL.
+-You may be prompted to enter the password for the postgres user that you set during installation.
+
+**Create a New Database:**
+-In the pgAdmin4 interface, right-click on the Servers item in the left-hand tree and select Connect if it’s not already connected.
+-Expand the server tree, right-click on Databases, and select Create > Database....
+
+**In the Create Database dialog:**
+-**Database Name:** Enter **your_db_name**. Ex: CyberCube
+-**Owner:** Set this to postgres.
+Click **Save** to create the database.
+
+### Step 3: Connect PostgreSQL to VS Code
+1. **Install the PostgreSQL Extension in VS Code:**
+
+Open Visual Studio Code and go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+Search for "PostgreSQL" and install the official PostgreSQL extension by Chris Kolkman.
+
+2. **Connect to PostgreSQL:**
+
+After installing the extension, you can connect to your PostgreSQL database by clicking on the "PostgreSQL" icon in the left sidebar.
+Click on "Add New Connection", and enter the connection details:
+-**Host:** localhost
+-**Port:** 5432 (default)
+-**User:** your_db_user (Ex:postgres)
+-**Password:** Enter the password you set during installation.
+-**Database:** your_db_name (Ex: CyberCube)
+After connecting, you should see your database listed, and you can start interacting with it directly from VS Code.
+   
+### Step 4: Clone the Repository
 Clone this repository to your local machine:
 ```bash
 git clone https://github.com/prakharsdev/CyberCube.git
@@ -103,6 +152,17 @@ Run the main.py script to create the necessary database tables and execute the E
 python main.py
 ```
 The script will fetch CVE data, transform it, and load it into the PostgreSQL database.
+
+## Step 6: Run the API
+1. **Start the Flask Application:**
+- Run the Flask app using the following command:
+```bash
+python app.py
+```
+2. The API will be available at
+   ```
+   http://localhost:5000/
+   ```
 
 ## 4. Additional Information
 **Logging**
