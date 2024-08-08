@@ -88,6 +88,7 @@ All endpoints below require a GET request and must include the X-API-Key header 
      ~cve_id (optional): Filter by a specific CVE ID.
      ~product_id (optional): Filter by a specific product ID.
 -**Response:** List of vulnerabilities based on the provided filters.
+![image](https://github.com/user-attachments/assets/9233834a-327c-41eb-a378-78c764fc856a)
 
 ### 2. Get Severity Distribution
 -**Endpoint:** /api/severity-distribution
