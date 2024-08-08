@@ -35,22 +35,22 @@ Rationale for Selection:
   
 ### Why Flask Was Chosen Over Other Frameworks
 Flask was chosen as the framework for this API for several key reasons, particularly when compared to alternatives like GraphQL and traditional REST frameworks:
-1. Simplicity and Flexibility:
+1. **Simplicity and Flexibility:**
 -	Flask is a micro-framework, meaning it comes with minimal built-in features, allowing developers to add only what is needed. This is ideal for a project like this, where specific tools (e.g., caching, rate limiting) are needed without the overhead of a full-stack framework.
 -	Flask’s simplicity allows for easy setup and quick iteration, which is beneficial during the development of APIs that need to be scalable and customizable.
-2. Easy Integration with SQL Databases:
+2. **Easy Integration with SQL Databases:**
 -	Flask seamlessly integrates with SQL databases, particularly with extensions like SQLAlchemy or directly with psycopg2 for PostgreSQL. This makes it easier to manage database interactions within the API.
 -	The project's need to handle complex SQL queries is well-served by Flask’s straightforward request handling and database integration capabilities.
-3. Lightweight and Scalable:
+3. **Lightweight and Scalable:**
 -	Flask’s lightweight nature makes it an excellent choice for APIs that need to be deployed in various environments, from local development to cloud-based production systems.
 -	The framework is scalable, allowing the API to grow in complexity as the project evolves without needing a complete overhaul of the architecture.
-4. Community and Ecosystem:
+4. **Community and Ecosystem:**
 -	Flask has a large and active community, providing a wealth of extensions, plugins, and support resources. This makes it easier to find solutions and best practices for common tasks like authentication, logging, and deployment.
 -	The ecosystem around Flask includes robust tools for testing, deployment, and monitoring, which are critical for maintaining a reliable API.
-5. Comparison to GraphQL:
+5. **Comparison to GraphQL:**
 -	GraphQL offers a more flexible querying mechanism, allowing clients to specify exactly what data they need. However, for this project, the simplicity and predictability of REST-like endpoints (using Flask) were preferred, especially given the structured nature of the data being served.
 -	Implementing GraphQL might introduce additional complexity in both the server and client-side logic, which was unnecessary given the API’s straightforward requirements.
-6. Comparison to Full REST Frameworks:
+6. **Comparison to Full REST Frameworks:**
 -	Full REST frameworks like Django REST Framework provide many built-in features out of the box, such as authentication, serialization, and more. However, these also come with additional complexity and overhead.
 -	Flask provides just enough structure to implement REST-like APIs without the rigidity of a full REST framework, allowing for more control over the application’s architecture.
 In summary, Flask was chosen for its simplicity, flexibility, and strong integration with SQL databases, making it well-suited for developing a scalable and maintainable API for querying CVE data.
@@ -70,26 +70,29 @@ http://localhost:5000/
 
 **Step 2:** Testing the API with Postman
 Postman is a popular tool for testing and interacting with APIs. Below are the steps to set up and test the CVE Data API using Postman.
-1.	Install Postman: If you haven’t already, download and install Postman from the official [website](https://www.postman.com/downloads/).
-2.	Create a new request:
+1.	**Install Postman:** If you haven’t already, download and install Postman from the official [website](https://www.postman.com/downloads/).
+2.	**Create a new request:**
 -	Set the request method to GET.
 -	Enter the URL (e.g., http://localhost:5000/api/vulnerabilities).
 -	Under the Headers tab, add a key X-API-Key with the value of your API key.
-3.	Send the request: Click the Send button to make the request and view the response.
-4.	Explore other endpoints: Test other API endpoints by adjusting the URL and parameters as needed.
+3.	**Send the request:** Click the Send button to make the request and view the response.
+4.	**Explore other endpoints:** Test other API endpoints by adjusting the URL and parameters as needed.
 4. API Documentation
-API Endpoints
+ 	
+### API Endpoints
+
 1. Get Vulnerabilities
-•	Endpoint: /api/vulnerabilities
-•	Method: GET
-•	Parameters:
+a)	**Endpoint:** /api/vulnerabilities
+b)	**Method:** GET
+c)	**Parameters:**
 -	cve_id (optional): Filter by a specific CVE ID.
 -	product_id (optional): Filter by a specific product ID.
-•	Headers:
+d)	**Headers:**
 -	X-API-Key: Your API key.
-•	Response:
+e)	**Response:**
 -	Status: 200 OK
 -	Body: JSON or HTML table of vulnerabilities.
+  
 2. Get Severity Distribution
 •	Endpoint: /api/severity-distribution
 •	Method: GET
