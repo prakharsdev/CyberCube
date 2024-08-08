@@ -87,8 +87,8 @@ Postman is a popular tool for testing and interacting with APIs. Below are the s
 -	**Method:** GET
 
 -	**Parameters:**
---	cve_id (optional): Filter by a specific CVE ID.
---	product_id (optional): Filter by a specific product ID.
+  -cve_id (optional): Filter by a specific CVE ID.
+  -product_id (optional): Filter by a specific product ID.
   
 -	**Headers:**
 --	X-API-Key: Your API key.
