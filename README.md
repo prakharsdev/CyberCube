@@ -155,6 +155,7 @@ python main.py
 The script will fetch CVE data, transform it, and load it into the PostgreSQL database.
 
 ## Step 6: Run the API
+API README file [[LINK](https://github.com/prakharsdev/CyberCube/tree/master/api)]
 1. **Start the Flask Application:**
 - Run the Flask app using the following command:
 ```bash
