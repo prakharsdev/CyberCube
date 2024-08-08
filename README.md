@@ -114,6 +114,7 @@ Click on "Add New Connection", and enter the connection details:
 - **Password:** Enter the password you set during installation.
 - **Database:** your_db_name (Ex: CyberCube)
 After connecting, you should see your database listed, and you can start interacting with it directly from VS Code.
+![image](https://github.com/user-attachments/assets/297f95e8-b323-4599-876b-822a5695e2bb)
    
 ### Step 4: Clone the Repository
 Clone this repository to your local machine:
