@@ -61,6 +61,7 @@ The data model is structured to capture detailed information about vulnerabiliti
 ### Database Schema and Design Reasoning
 The database schema is designed with normalization principles in mind to ensure data integrity, reduce redundancy, and improve query performance. Each table has a specific purpose, and foreign keys are used to maintain relationships between related data (e.g., linking CVE entries to their descriptions, metrics, and affected products).
 This design allows for efficient querying and analysis, enabling detailed insights into vulnerabilities, their impact, and the affected systems.
+![ERD](https://github.com/user-attachments/assets/0a5db330-116b-4027-a365-c43b199c90d4)
 
 
 ## 3. How to Set Up
