@@ -1,11 +1,11 @@
 This API is created using Flask for querying and analyzing CVE (Common Vulnerabilities and Exposures) data stored in a PostgreSQL database. The API allows users to retrieve detailed information on vulnerabilities, their severity, affected products, and more. To ensure security and performance, the API implements features such as API key authentication, rate limiting, and caching.
 ## 1. Code Structure
 The project is organized into the following files and directories:
-•	**app.py:** The main entry point for the Flask application. It initializes the Flask app, sets up caching and rate limiting, and registers all API routes. It also manages application-wide error handling and database connection teardown.
-•	**db.py:** Manages database connections using PostgreSQL. The connection parameters are sourced from environment variables, ensuring security and flexibility. This module provides functions to query the database and close the connection properly.
-•	**queries.py:** Contains SQL queries used by the API endpoints to retrieve data from the PostgreSQL database. These queries cover various analytical functions, such as retrieving the distribution of vulnerabilities by severity, identifying products with the most vulnerabilities, and more.
-•	**routes.py:** Defines the HTTP routes (API endpoints) for accessing the CVE data. Each route is secured with API key validation and implements caching and rate limiting to improve performance and prevent abuse. The module also includes utility functions for rendering query results as HTML tables or JSON.
-•	**log_config.py:** Configures logging for the API, directing logs to both the console and a file (api.log). This setup ensures that detailed logs are kept for debugging and monitoring purposes.
+-	**app.py:** The main entry point for the Flask application. It initializes the Flask app, sets up caching and rate limiting, and registers all API routes. It also manages application-wide error handling and database connection teardown.
+-	**db.py:** Manages database connections using PostgreSQL. The connection parameters are sourced from environment variables, ensuring security and flexibility. This module provides functions to query the database and close the connection properly.
+-	**queries.py:** Contains SQL queries used by the API endpoints to retrieve data from the PostgreSQL database. These queries cover various analytical functions, such as retrieving the distribution of vulnerabilities by severity, identifying products with the most vulnerabilities, and more.
+-	**routes.py:** Defines the HTTP routes (API endpoints) for accessing the CVE data. Each route is secured with API key validation and implements caching and rate limiting to improve performance and prevent abuse. The module also includes utility functions for rendering query results as HTML tables or JSON.
+-	**log_config.py:** Configures logging for the API, directing logs to both the console and a file (api.log). This setup ensures that detailed logs are kept for debugging and monitoring purposes.
 
 ### Explanation of Code Logic
 1.	Flask Application Setup (app.py):
@@ -29,29 +29,30 @@ The project is organized into the following files and directories:
 Chosen API: NVD (National Vulnerability Database) API
 The NVD API was selected for this project because it provides comprehensive and up-to-date information about CVEs, which is essential for security analysis. The API offers structured data on vulnerabilities, including their descriptions, severity metrics, and associated products. This makes it a reliable source for building a database that can be queried for insights into software vulnerabilities.
 Rationale for Selection:
-•	Comprehensive Data: The NVD API offers detailed information on a wide range of vulnerabilities, including CVSS scores, affected products, and references.
-•	Structured Format: The API provides data in a well-structured JSON format, making it easy to parse and integrate into the ETL pipeline.
-•	Regular Updates: The NVD API is frequently updated with new vulnerabilities, ensuring that the data remains current and relevant.
+-	Comprehensive Data: The NVD API offers detailed information on a wide range of vulnerabilities, including CVSS scores, affected products, and references.
+-	Structured Format: The API provides data in a well-structured JSON format, making it easy to parse and integrate into the ETL pipeline.
+-	Regular Updates: The NVD API is frequently updated with new vulnerabilities, ensuring that the data remains current and relevant.
+  
 ### Why Flask Was Chosen Over Other Frameworks
 Flask was chosen as the framework for this API for several key reasons, particularly when compared to alternatives like GraphQL and traditional REST frameworks:
 1. Simplicity and Flexibility:
-•	Flask is a micro-framework, meaning it comes with minimal built-in features, allowing developers to add only what is needed. This is ideal for a project like this, where specific tools (e.g., caching, rate limiting) are needed without the overhead of a full-stack framework.
-•	Flask’s simplicity allows for easy setup and quick iteration, which is beneficial during the development of APIs that need to be scalable and customizable.
+-	Flask is a micro-framework, meaning it comes with minimal built-in features, allowing developers to add only what is needed. This is ideal for a project like this, where specific tools (e.g., caching, rate limiting) are needed without the overhead of a full-stack framework.
+-	Flask’s simplicity allows for easy setup and quick iteration, which is beneficial during the development of APIs that need to be scalable and customizable.
 2. Easy Integration with SQL Databases:
-•	Flask seamlessly integrates with SQL databases, particularly with extensions like SQLAlchemy or directly with psycopg2 for PostgreSQL. This makes it easier to manage database interactions within the API.
-•	The project's need to handle complex SQL queries is well-served by Flask’s straightforward request handling and database integration capabilities.
+-	Flask seamlessly integrates with SQL databases, particularly with extensions like SQLAlchemy or directly with psycopg2 for PostgreSQL. This makes it easier to manage database interactions within the API.
+-	The project's need to handle complex SQL queries is well-served by Flask’s straightforward request handling and database integration capabilities.
 3. Lightweight and Scalable:
-•	Flask’s lightweight nature makes it an excellent choice for APIs that need to be deployed in various environments, from local development to cloud-based production systems.
-•	The framework is scalable, allowing the API to grow in complexity as the project evolves without needing a complete overhaul of the architecture.
+-	Flask’s lightweight nature makes it an excellent choice for APIs that need to be deployed in various environments, from local development to cloud-based production systems.
+-	The framework is scalable, allowing the API to grow in complexity as the project evolves without needing a complete overhaul of the architecture.
 4. Community and Ecosystem:
-•	Flask has a large and active community, providing a wealth of extensions, plugins, and support resources. This makes it easier to find solutions and best practices for common tasks like authentication, logging, and deployment.
-•	The ecosystem around Flask includes robust tools for testing, deployment, and monitoring, which are critical for maintaining a reliable API.
+-	Flask has a large and active community, providing a wealth of extensions, plugins, and support resources. This makes it easier to find solutions and best practices for common tasks like authentication, logging, and deployment.
+-	The ecosystem around Flask includes robust tools for testing, deployment, and monitoring, which are critical for maintaining a reliable API.
 5. Comparison to GraphQL:
-•	GraphQL offers a more flexible querying mechanism, allowing clients to specify exactly what data they need. However, for this project, the simplicity and predictability of REST-like endpoints (using Flask) were preferred, especially given the structured nature of the data being served.
-•	Implementing GraphQL might introduce additional complexity in both the server and client-side logic, which was unnecessary given the API’s straightforward requirements.
+-	GraphQL offers a more flexible querying mechanism, allowing clients to specify exactly what data they need. However, for this project, the simplicity and predictability of REST-like endpoints (using Flask) were preferred, especially given the structured nature of the data being served.
+-	Implementing GraphQL might introduce additional complexity in both the server and client-side logic, which was unnecessary given the API’s straightforward requirements.
 6. Comparison to Full REST Frameworks:
-•	Full REST frameworks like Django REST Framework provide many built-in features out of the box, such as authentication, serialization, and more. However, these also come with additional complexity and overhead.
-•	Flask provides just enough structure to implement REST-like APIs without the rigidity of a full REST framework, allowing for more control over the application’s architecture.
+-	Full REST frameworks like Django REST Framework provide many built-in features out of the box, such as authentication, serialization, and more. However, these also come with additional complexity and overhead.
+-	Flask provides just enough structure to implement REST-like APIs without the rigidity of a full REST framework, allowing for more control over the application’s architecture.
 In summary, Flask was chosen for its simplicity, flexibility, and strong integration with SQL databases, making it well-suited for developing a scalable and maintainable API for querying CVE data.
 
 ## How to Use the API
