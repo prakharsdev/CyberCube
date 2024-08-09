@@ -75,6 +75,7 @@ Postman is a popular tool for testing and interacting with APIs. Below are the s
 -	Set the request method to GET.
 -	Enter the URL (e.g., http://localhost:5000/api/vulnerabilities).
 -	Under the Headers tab, add a key X-API-Key with the value of your API key.
+- NB:The API key value is currently hardcoded(in **routes.py**), but it can be configured to be generated randomly.
 3.	**Send the request:** Click the Send button to make the request and view the response.
 4.	**Explore other endpoints:** Test other API endpoints by adjusting the URL and parameters as needed.
 4. API Documentation
