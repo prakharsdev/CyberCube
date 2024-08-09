@@ -26,7 +26,7 @@ The project is organized into the following files and directories:
 -	Logging is configured to capture detailed logs of API activity, errors, and performance, aiding in monitoring and debugging.
 
 ## 2. Chosen Open API and Rationale for Selection
-**Chosen API:** NVD (National Vulnerability Database) API
+**Chosen API:** [NVD (National Vulnerability Database) API](https://nvd.nist.gov/developers/vulnerabilities)
 The NVD API was selected for this project because it provides comprehensive and up-to-date information about CVEs, which is essential for security analysis. The API offers structured data on vulnerabilities, including their descriptions, severity metrics, and associated products. This makes it a reliable source for building a database that can be queried for insights into software vulnerabilities.
 Rationale for Selection:
 -	**Comprehensive Data:** The NVD API offers detailed information on a wide range of vulnerabilities, including CVSS scores, affected products, and references.
