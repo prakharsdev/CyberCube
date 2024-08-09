@@ -22,7 +22,7 @@ In addition to the ETL pipeline, this project includes an HTTP-based API built w
 ## Please note that there are two README files:
 
 - The README you are currently reading provides documentation specific to the project's ETL pipeline.
-- A second README, which provides detailed instructions and documentation specific to the API. You can access it here ([Link](https://github.com/prakharsdev/CyberCube/tree/master/api#readme)).
+- A second README, which provides detailed instructions and documentation specific to the API and it's test results. You can access it here ([Link](https://github.com/prakharsdev/CyberCube/tree/master/api#readme)).
 
 
 ## 1. Code Structure
