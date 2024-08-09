@@ -5,6 +5,24 @@ This project is an ETL (Extract, Transform, Load) pipeline designed to fetch, pr
 - **Full Project Demo video:** 
 - [![Demo video](https://github.com/user-attachments/assets/1dac48dc-a059-4b16-b4e7-c6d6ed0c1e02)](https://www.youtube.com/watch?v=XNRkRjKPuaU)
 
+**What is CVE Data?**
+CVE data refers to information about publicly disclosed cybersecurity vulnerabilities. Each CVE entry contains an identification number, a description of the vulnerability, and references to related advisories, reports, and tools. CVE data is managed by the National Vulnerability Database (NVD) and is widely used by security professionals to track and address vulnerabilities in software and hardware systems.
+
+**Why and Where is CVE Data Useful?**
+CVE data is crucial for several reasons:
+
+- Security Management: Organizations use CVE data to identify and remediate vulnerabilities in their systems, helping to prevent potential security breaches.
+- Risk Assessment: By analyzing CVE data, security teams can assess the risk posed by various vulnerabilities and prioritize their response efforts accordingly.
+- Compliance: Many regulatory standards require organizations to monitor and address vulnerabilities as part of their compliance efforts.
+- Research and Development: Security researchers and developers use CVE data to understand common vulnerabilities and improve the security of their products.
+
+## Project Components
+In addition to the ETL pipeline, this project includes an HTTP-based API built with Flask that allows users to query the processed CVE data directly from the PostgreSQL database. The API supports various endpoints for retrieving detailed vulnerability information, severity distribution, and other analytics.
+
+## Please note that there are two README files:
+
+- The README you are currently reading provides documentation specific to the project's ETL pipeline.
+- A second README, which provides detailed instructions and documentation specific to the API. You can access it here ([Link](https://github.com/prakharsdev/CyberCube/tree/master/api#readme)).
 
 
 ## 1. Code Structure
