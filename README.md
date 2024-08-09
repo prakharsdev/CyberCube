@@ -153,6 +153,8 @@ DB_PORT=your_db_port
 ```
 These environment variables configure the connection to your PostgreSQL database.
 
+- **NB!** For this test assignment, I've included the .env file in the repository to simplify the setup process and ensure easy configuration for anyone reviewing the project. In a real-world scenario, sensitive information would be excluded from the repo, but for this assignment, it serves as a convenient example and poses minimal security risk.
+  
 ### Step 5: Create the Database Tables
 Run the main.py script to create the necessary database tables and execute the ETL process:
 ```bash
