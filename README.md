@@ -171,7 +171,15 @@ python app.py
    ```
    http://localhost:5000/
    ```
+or 
+```
+http://127.0.0.1:5000
 
+```
+http://localhost:5000/ and http://127.0.0.1:5000/ refer to the same address.
+
+- localhost is a hostname that refers to the local computer you're currently using.
+- 127.0.0.1 is the loopback IP address, which is a standard IP address used to refer to the same local machine.
 ## 4. Additional Information
 **Logging**
 The ETL process logs its operations to both the console and a file named etl_process.log. This log file can be found in the log directory. The logging configuration can be adjusted in logging_config.py.
