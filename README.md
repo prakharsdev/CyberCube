@@ -176,7 +176,7 @@ or
 http://127.0.0.1:5000
 
 ```
-http://localhost:5000/ and http://127.0.0.1:5000/ refer to the same address.
+Note: http://localhost:5000/ and http://127.0.0.1:5000/ refer to the same address.
 
 - localhost is a hostname that refers to the local computer you're currently using.
 - 127.0.0.1 is the loopback IP address, which is a standard IP address used to refer to the same local machine.
