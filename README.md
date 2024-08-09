@@ -3,6 +3,8 @@
 This project is an ETL (Extract, Transform, Load) pipeline designed to fetch, process, and store CVE (Common Vulnerabilities and Exposures) data from an external API. The ETL process extracts CVE data, transforms it into a structured format, and loads it into a PostgreSQL database. The stored data can then be queried and analyzed to gain insights into vulnerabilities, their severity, affected products, and more.
 
 - **Full Project Demo video:** (![Demo video]https://www.youtube.com/watch?v=XNRkRjKPuaU)
+- [![Demo video](![image](https://github.com/user-attachments/assets/1dac48dc-a059-4b16-b4e7-c6d6ed0c1e02))]([https://www.youtube.com/watch?v=z_NVP1ZeOBI](https://www.youtube.com/watch?v=XNRkRjKPuaU))
+
 
 ## 1. Code Structure
 The project is organized into the following files and directories:
