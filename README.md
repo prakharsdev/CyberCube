@@ -36,7 +36,7 @@ The project is organized into the following files and directories:
 
 ### Explanation of Code Logic
 1.	**Fetching Data (fetch.py):**
-	The script sends a request to an external API to retrieve CVE data within a specified date range. I have collected data from the date range **November 8, 2023** to **January 5, 2024**, which spans 60 days. The data is received in JSON format and returned for further processing.
+	The script sends a request to an external API to retrieve CVE data within a specified date range. I have collected data from the date range **November 8, 2023** to **January 5, 2024**, which spans 60 days. The data is received in JSON format and returned for further processing. The API endpoint used in this project to  fetch data is https://services.nvd.nist.gov/rest/json/cves/2.0
 2.	**Transforming Data (transform_data.py):**
 	The raw JSON data is transformed into a structured format suitable for database storage. This includes flattening nested structures, standardizing field names, and ensuring that all necessary fields are present.
 3.	**Loading Data (load_data.py):**
