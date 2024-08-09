@@ -84,60 +84,60 @@ Postman is a popular tool for testing and interacting with APIs. Below are the s
 All endpoints below require a GET request and must include the X-API-Key header with your API key for authentication. Successful requests return a 200 OK status, and responses are provided as JSON or HTML tables, depending on the endpoint.
 
 ### 1. Get Vulnerabilities
--**Endpoint:** /api/vulnerabilities
--**Parameters:**
+- **Endpoint:** /api/vulnerabilities
+- **Parameters:**
      ~cve_id (optional): Filter by a specific CVE ID.
      ~product_id (optional): Filter by a specific product ID.
--**Response:** List of vulnerabilities based on the provided filters.
+- **Response:** List of vulnerabilities based on the provided filters.
 ![image](https://github.com/user-attachments/assets/9233834a-327c-41eb-a378-78c764fc856a)
 
 ### 2. Get Severity Distribution
--**Endpoint:** /api/severity-distribution
--**Response:** Count of vulnerabilities grouped by severity level.
+- **Endpoint:** /api/severity-distribution
+- **Response:** Count of vulnerabilities grouped by severity level.
 ![image](https://github.com/user-attachments/assets/4a2dd208-beca-4f5d-962d-e5a58fd00291)
 
 
 ### 3. Get Worst Products
--**Endpoint:** /api/worst-products
--**Response:** List of products with the highest number of vulnerabilities.
+- **Endpoint:** /api/worst-products
+- **Response:** List of products with the highest number of vulnerabilities.
 ![image](https://github.com/user-attachments/assets/08327c10-ebbc-4533-97f1-c9d2dcc435ff)
 
 
 ### 4. Get Top Impact Vulnerabilities
--**Endpoint:** /api/top-impact-vulnerabilities
--**Response:** Top 10 vulnerabilities with the highest impact scores.
+- **Endpoint:** /api/top-impact-vulnerabilities
+- **Response:** Top 10 vulnerabilities with the highest impact scores.
 ![image](https://github.com/user-attachments/assets/738b8652-fd1b-4629-a945-5283d311c15a)
 
 
 ### 5. Get Top Exploitability Vulnerabilities
--**Endpoint:** /api/top-exploitability-vulnerabilities
--**Response:** Top 10 vulnerabilities with the highest exploitability scores.
+- **Endpoint:** /api/top-exploitability-vulnerabilities
+- **Response:** Top 10 vulnerabilities with the highest exploitability scores.
 ![image](https://github.com/user-attachments/assets/36c4beb2-bacf-4f66-a99f-ac034efc80a7)
 
 
 ### 6. Get Top Attack Vectors
--**Endpoint:** /api/top-attack-vectors
--**Response:** Most common attack vectors associated with vulnerabilities.
+- **Endpoint:** /api/top-attack-vectors
+- **Response:** Most common attack vectors associated with vulnerabilities.
 ![image](https://github.com/user-attachments/assets/f8c6c5b0-611c-4327-9362-447e3c0f5001)
 
 
 ## Additional Analytical Endpoints
 
 ### 7. Get Common Weaknesses
--**Endpoint:** /api/common-weaknesses
--**Response:** List of the most common weaknesses (CWEs) associated with vulnerabilities.
+- **Endpoint:** /api/common-weaknesses
+- **Response:** List of the most common weaknesses (CWEs) associated with vulnerabilities.
 ![image](https://github.com/user-attachments/assets/688cad5a-27e4-4f0a-b4ce-394559433ba0)
 
 
 ### 8. Get Most Affected Vendors
--**Endpoint:** /api/most-affected-vendors
--**Response:** Vendors with the most products affected by vulnerabilities.
+- **Endpoint:** /api/most-affected-vendors
+- **Response:** Vendors with the most products affected by vulnerabilities.
 ![image](https://github.com/user-attachments/assets/464365f3-48c2-499c-b152-789d9529110a)
 
 
 ### 9. Get Most Common Configurations
--**Endpoint:** /api/most-common-configurations
--**Response:** Most frequently occurring configurations linked to vulnerabilities.
+- **Endpoint:** /api/most-common-configurations
+- **Response:** Most frequently occurring configurations linked to vulnerabilities.
 ![image](https://github.com/user-attachments/assets/20f26133-2c05-4739-9299-7079498fd50c)
 
 
@@ -148,8 +148,8 @@ All endpoints below require a GET request and must include the X-API-Key header 
 
 
 ### 11. Get Products with Common Attack Vectors
--**Endpoint:** /api/products-common-attack-vectors
--**Response:** Products frequently associated with common attack vectors.
+- **Endpoint:** /api/products-common-attack-vectors
+- **Response:** Products frequently associated with common attack vectors.
 ![image](https://github.com/user-attachments/assets/8b3acba1-0e1d-4d4f-9d11-44c17b86dba0)
 
   
