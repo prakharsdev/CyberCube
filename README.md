@@ -1,4 +1,5 @@
 # CyberCube
+## Building a CVE Data API with Flask, PostgreSQL and Postman Testing
 This project is an ETL (Extract, Transform, Load) pipeline designed to fetch, process, and store CVE (Common Vulnerabilities and Exposures) data from an external API. The ETL process extracts CVE data, transforms it into a structured format, and loads it into a PostgreSQL database. The stored data can then be queried and analyzed to gain insights into vulnerabilities, their severity, affected products, and more.
 
 ## 1. Code Structure
